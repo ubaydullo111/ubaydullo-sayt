@@ -1,0 +1,174 @@
+    <!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubaydullo - Learning Platform</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Faylni ulash -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <aside>
+        <div class="logo-area">
+            <i class="fa-solid fa-graduation-cap"></i> UbayStudy
+        </div>
+        <ul class="nav-links">
+            <li class="active" onclick="switchTab(this, 'home')">
+                <button><i class="fa-solid fa-house"></i> Asosiy</button>
+            </li>
+            <li onclick="switchTab(this, 'courses')">
+                <button><i class="fa-solid fa-book-open"></i> Kurslarim</button>
+            </li>
+            <li onclick="switchTab(this, 'stats')">
+                <button><i class="fa-solid fa-chart-line"></i> Natijalar</button>
+            </li>
+            <li onclick="switchTab(this, 'settings')">
+                <button><i class="fa-solid fa-gear"></i> Sozlamalar</button>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <header>
+            <div class="welcome-msg">
+                <h1>Xush kelibsiz, Ubaydullo! 👋</h1>
+                <p>O'rganishda davom etamiz va yangi cho'qqilarni zabt etamiz.</p>
+            </div>
+            <div class="user-profile">
+                <img src="https://ui-avatars.com/api/?name=Ubaydullo&background=4f46e5&color=fff" alt="Ubaydullo">
+                <div class="user-info">
+                    <div class="name">Ubaydullo</div>
+                    <div class="role">Dasturchi</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Home Tab -->
+        <div id="home" class="tab-content active">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-book"></i></div>
+                    <div class="stat-data">
+                        <h3>3 ta</h3>
+                        <p>Faol kurslar</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-clock"></i></div>
+                    <div class="stat-data">
+                        <h3>32 soat</h3>
+                        <p>O'qish vaqti</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-trophy"></i></div>
+                    <div class="stat-data">
+                        <h3>65%</h3>
+                        <p>O'rtacha natija</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-heading">Faol darslaringiz</h2>
+            
+            <div class="courses-grid">
+                <!-- Course 1 -->
+                <div class="course-card">
+                    <div class="course-banner"><i class="fa-brands fa-html5"></i></div>
+                    <div class="course-body">
+                        <h3 class="course-title">HTML5 & CSS3 Zamonaviy Tuzilishi</h3>
+                        <p class="course-desc">Veb-saytlar maketi va adaptiv dizayn asoslari.</p>
+                        <div class="progress-container">
+                            <div class="progress-info">
+                                <span>Jarayon</span><span id="prog-text-1">80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="prog-bar-1" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <button class="btn-action" onclick="openCourse('HTML5 & CSS3 Zamonaviy Tuzilishi', 1)">Darsni boshlash</button>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="course-card">
+                    <div class="course-banner banner-js"><i class="fa-brands fa-js"></i></div>
+                    <div class="course-body">
+                        <h3 class="course-title">JavaScript Interaktivlik</h3>
+                        <p class="course-desc">DOM bilan ishlash va interaktiv funksiyalar yozish.</p>
+                        <div class="progress-container">
+                            <div class="progress-info">
+                                <span>Jarayon</span><span id="prog-text-2">50%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="prog-bar-2" style="width: 50%;"></div>
+                            </div>
+                        </div>
+                        <button class="btn-action" onclick="openCourse('JavaScript Interaktivlik', 2)">Darsni boshlash</button>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="course-card">
+                    <div class="course-banner banner-react"><i class="fa-brands fa-react"></i></div>
+                    <div class="course-body">
+                        <h3 class="course-title">React.js Asoslari</h3>
+                        <p class="course-desc">Komponentlar va zamonaviy web dasturlar yaratish.</p>
+                        <div class="progress-container">
+                            <div class="progress-info">
+                                <span>Jarayon</span><span id="prog-text-3">20%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="prog-bar-3" style="width: 20%;"></div>
+                            </div>
+                        </div>
+                        <button class="btn-action" onclick="openCourse('React.js Asoslari', 3)">Darsni boshlash</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Courses Tab -->
+        <div id="courses" class="tab-content">
+            <h2>Barcha mavjud kurslar</h2>
+            <p class="tab-desc">Bu yerda barcha mavjud darsliklar ro'yxati joylashadi.</p>
+        </div>
+
+        <!-- Stats Tab -->
+        <div id="stats" class="tab-content">
+            <h2>Shaxsiy o'zlashtirish tahlili</h2>
+            <p class="tab-desc">Haftalik va oylik ko'rsatkichlaringiz statistikasi.</p>
+        </div>
+
+        <!-- Settings Tab -->
+        <div id="settings" class="tab-content">
+            <h2>Profil sozlamalari</h2>
+            <p class="tab-desc">Parol va shaxsiy ma'lumotlarni tahrirlash bo'limi.</p>
+        </div>
+    </main>
+
+    <!-- Modal Video/Lesson Player -->
+    <div id="courseModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Dars sarlavhasi</h3>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="video-placeholder">
+                <i class="fa-solid fa-circle-play"></i>
+                <p>Video darslik ushbu oynada namoyish etiladi</p>
+            </div>
+            <button class="btn-action" onclick="completeLesson()">Darsni tugatish (+10%)</button>
+        </div>
+    </div>
+
+    <!-- JS Faylni ulash -->
+    <script src="script.js"></script>
+</body>
+</html>
