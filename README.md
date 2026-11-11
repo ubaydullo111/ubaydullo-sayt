@@ -1,1 +1,0 @@
-# ubaydullo-sayt
